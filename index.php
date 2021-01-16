@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-	<div class="slider"></div><!-- slider -->
+	<div class="slider">Index.php file</div><!-- slider -->
 
 
 <section class="blog-area section">
@@ -10,7 +10,7 @@
 
 				<div class="col-lg-8 col-md-12">
 					<div class="row">
-
+<?php post_render() ?>
 						<div class="col-md-6 col-sm-12">
 							<div class="card h-100">
 								<div class="single-post post-style-1">
@@ -276,17 +276,6 @@
 
 
 	<?php get_footer() ?>
-
-
-	<!-- SCIPTS -->
-
-	<script src="common-js/jquery-3.1.1.min.js"></script>
-
-	<script src="common-js/tether.min.js"></script>
-
-	<script src="common-js/bootstrap.js"></script>
-
-	<script src="common-js/scripts.js"></script>
 
 </body>
 </html>

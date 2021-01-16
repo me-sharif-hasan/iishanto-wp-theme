@@ -22,7 +22,7 @@
 	<link href="<?php echo get_bloginfo( 'template_url' ) ?>/layout-1/css/styles.css" rel="stylesheet">
 
 	<link href="<?php echo get_bloginfo( 'template_url' ) ?>/layout-1/css/responsive.css" rel="stylesheet">
-
+	<?php wp_head(); ?>
 </head>
 <body >
 
