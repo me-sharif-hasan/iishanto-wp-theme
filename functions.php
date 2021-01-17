@@ -1,11 +1,40 @@
 <?php
-function add_styles(){
+// function to count views.
+function setPostViews($postID) {
+    $count_key = 'iishanto_post_views';
 
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
 }
 
-function get_dposts($snip){
-	//while(have_posts)
+
+// function to display number of posts.
+
+function getPostViews($postID){
+    $count_key = 'iishanto_post_views';
+    $count = get_post_meta($postID, $count_key, true);
+
+    if($count==0||$count==''){
+      $count_key = 'tie_views';
+      $count = get_post_meta($postID, $count_key, true);
+      setPostViews($count==''?0:$count);
+    }
+
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0";
+    }
+    return $count;
 }
+
 
 function get_logo_url(){
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -48,7 +77,9 @@ function post_render(){
       }
     }
 
-
+    $post_url=esc_url(get_the_permalink());
+    $post_views=getPostViews(get_the_ID());
+    $post_comments = get_comments_number(get_the_ID());
 
     $post_thumb_url=get_the_post_thumbnail_url(get_the_ID(),'full');
     $post_thumb_id=get_post_thumbnail_id(get_the_ID());
@@ -56,8 +87,8 @@ function post_render(){
 
     $date = get_the_date();
 
-    $replace=array($post_title,$post_excerpt,$post_thumb_url,$thumb_alt,$post_category,$post_category_slug,$date);
-    $find=array("%post_title%","%post_excerpt%","%post_thumb_url%","%thumb_alt%","%post_category%","%category_slug%");
+    $replace=array($post_title,$post_url,$post_excerpt,$post_thumb_url,$thumb_alt,$post_category,$post_category_slug,$date,$post_views,$post_comments);
+    $find=array("%post_title%","%post_url%","%post_excerpt%","%post_thumb_url%","%thumb_alt%","%post_category%","%category_slug%","%post_date%","%post_views%","%post_comments%");
 
     $template="";
     if($post_thumb_url&&$dual==0){

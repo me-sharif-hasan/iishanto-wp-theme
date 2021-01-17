@@ -154,7 +154,7 @@ header .src-area .src-btn{ position: absolute; top: 0; bottom: 0; left: 0; width
 .blog-area .single-post{ height: 100%; position: relative; padding-bottom: 45px;
 	overflow: hidden; box-shadow: 0px 0px 5px rgba(0,0,0,.1); border: 1px solid #ddd; background: #fff; }
 
-.blog-area .single-post .title{ padding: 20px 30px 30px; }
+.blog-area .single-post .title{ padding: 5px 2px 10px 2px; }
 
 .single-post .avatar{ margin: 0 auto; margin-top: -40px; width: 70px; height: 70px; overflow: hidden; z-index: 10;
 	border-radius: 100px; position: relative; border: 7px solid #fff; box-shadow: 0px 0px 10px rgba(0,0,0,.2); }
@@ -188,7 +188,7 @@ header .src-area .src-btn{ position: absolute; top: 0; bottom: 0; left: 0; width
 
 .blog-area .post-style-2 .title{ padding: 15px 0px 20px; }
 
-.post-style-2 .avatar-area{ padding: 25px 0 15px; position: relative; }
+.post-style-2 .avatar-area{ padding: 25px 0 15px; position: relative;display: none; }
 
 .post-style-2 .avatar{ margin: 0px; }
 	
@@ -259,3 +259,45 @@ footer .input-area .submit-btn{ position: absolute; top: 0; bottom: 0; right: 0;
 
 
 
+/*
+@Edited by Sharif Hasan
+*/
+.avatar{
+	display: none;
+}
+.single-post .blog-info{
+	padding: 10px;
+	text-align: left;
+}
+
+.widget-area .cat-item{
+	display: block;
+	text-align: left;
+	border-bottom: 1px solid #eee;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: 0.3s;
+	position: relative;
+}
+.widget-area .cat-item a{
+	width: 100%;
+}
+.widget-area .cat-item:hover{
+	background: #eee;
+}
+
+.tagcloud{
+	text-align: left;
+	padding: 10px;
+}
+
+.tagcloud a{
+	font-size: 1em !important;
+	border: 1px dotted;
+	padding: 5px;
+	margin: 1px;
+	border-radius: 1px;
+}
+.tagcloud a:hover{
+	background: #eee;
+}

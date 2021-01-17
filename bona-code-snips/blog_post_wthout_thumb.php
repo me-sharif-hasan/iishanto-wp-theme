@@ -5,12 +5,11 @@
 
 									<div class="blog-info">
 
-										<h6 class="pre-title"><a href="#"><b>HEALTH</b></a></h6>
+										<h6 class="pre-title"><a href="#"><b>%post_category%</b></a></h6>
 
-										<h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-											Concepts in Physics?</b></a></h4>
+										<h4 class="title"><a href="%post_url%"><b>%post_title%</b></a></h4>
 
-										<p>%post_title%</p>
+										<p>%post_excerpt%</p>
 
 										<div class="avatar-area">
 											<a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
@@ -22,8 +21,8 @@
 
 										<ul class="post-footer">
 											<li><a href="#"><i class="ion-heart"></i>57</a></li>
-											<li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-											<li><a href="#"><i class="ion-eye"></i>138</a></li>
+											<li><a href="#"><i class="ion-chatbubble"></i>%post_comments%</a></li>
+											<li><a href="#"><i class="ion-eye"></i>%post_views%</a></li>
 										</ul>
 
 									</div><!-- blog-right -->
