@@ -39,7 +39,7 @@ function getPostViews($postID){
 
 function iishanto_get_titles(){
   wp_title("");
-  echo(" - ");
+  if(is_single()||is_category()) echo(" - ");
   bloginfo('title');
 }
 

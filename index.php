@@ -1,7 +1,14 @@
 
 <?php get_header() ?>
 
-	<div class="slider">Index.php file</div><!-- slider -->
+	<?php if(is_category()): ?>
+	<div class="slider">
+		<div class="display-table  center-text" style="padding: 20px;">
+		<h1 class="title"><b><?php single_term_title(); ?></b></h1>
+		<?php echo term_description(); ?>
+		</div>
+	</div><!-- slider -->
+	<?php endif; ?>
 
 
 <section class="blog-area section">
