@@ -168,11 +168,12 @@ header .src-area .src-btn{ position: absolute; top: 0; bottom: 0; left: 0; width
 6. MAIN POST ( LEF AREA )
 --------------------------------- */
 
-.main-post{ border-right: 1px solid #ddd; }
+.main-post{ border-right: 1px solid #ddd; box-sizing: border-box; margin: 0 10px 0 0; }
 
 .main-post .blog-post-inner{ padding-right: 30px; }
 
-.main-post .title{ margin-bottom: 30px; }
+.main-post .title{ margin-bottom: 10px; }
+.main-post .middle-area{margin-bottom: 20px;}
 
 .main-post .para{ margin: 30px 0; }
 

@@ -9,7 +9,7 @@
 
 										<h4 class="title"><a href="%post_url%"><b>%post_title%</b></a></h4>
 
-										<p>%post_excerpt%</p>
+										%post_excerpt%
 
 										<div class="avatar-area">
 											<a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>

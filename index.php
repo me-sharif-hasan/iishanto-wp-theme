@@ -1,3 +1,4 @@
+
 <?php get_header() ?>
 
 	<div class="slider">Index.php file</div><!-- slider -->
@@ -29,6 +30,8 @@
 				<div class="col-lg-4 col-md-12 no-left-padding">
 
 					<?php get_sidebar() ?>
+				</div>
+
 
 			</div><!-- row -->
 
