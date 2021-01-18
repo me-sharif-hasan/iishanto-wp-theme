@@ -37,7 +37,7 @@
   $args = array(
  'theme_location' => 'header-menu',
  'depth' => 4,
- 'container' => '',
+ 'container' => false,
  'menu_class'  => 'main-menu visible-on-click',
  'menu_id' => 'main-menu'
 );
