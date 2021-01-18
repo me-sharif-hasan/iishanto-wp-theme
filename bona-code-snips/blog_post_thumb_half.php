@@ -12,8 +12,8 @@
 
 									<ul class="post-footer">
 										<li><a href="#"><i class="ion-heart"></i>57</a></li>
-										<li><a href="#"><i class="ion-chatbubble"></i>%post_comments%</a></li>
-										<li><a href="#"><i class="ion-eye"></i>%post_views%</a></li>
+										<li><a href="%post_url%#comments"><i class="ion-chatbubble"></i>%post_comments%</a></li>
+										<li><a href="%post_url%"><i class="ion-eye"></i>%post_views%</a></li>
 									</ul>
 								</div>
 

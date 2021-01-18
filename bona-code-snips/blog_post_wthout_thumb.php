@@ -14,15 +14,15 @@
 										<div class="avatar-area">
 											<a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
 											<div class="right-area">
-												<a class="name" href="#"><b>Lora Plamer</b></a>
-												<h6 class="date" href="#">on Sep 29, 2017 at 9:48am</h6>
+												<a class="name" href="#"><b>%post_author%</b></a>
+												<h6 class="date" href="#">on %post_date%</h6>
 											</div>
 										</div>
 
 										<ul class="post-footer">
 											<li><a href="#"><i class="ion-heart"></i>57</a></li>
-											<li><a href="#"><i class="ion-chatbubble"></i>%post_comments%</a></li>
-											<li><a href="#"><i class="ion-eye"></i>%post_views%</a></li>
+											<li><a href="%post_url%#comments"><i class="ion-chatbubble"></i>%post_comments%</a></li>
+											<li><a href="%post_url%"><i class="ion-eye"></i>%post_views%</a></li>
 										</ul>
 
 									</div><!-- blog-right -->

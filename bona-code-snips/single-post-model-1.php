@@ -6,6 +6,9 @@
 							<div class="post-info">
 
 							</div><!-- post-info -->
+							<div class="post-thumb">
+								<img src="%post_thumb_url%" alt="%thumb_alt%">
+							</div>
 							<h3><?php //the_subtitle(); ?></h3>
 							<h1 class="title"><b>%post_title%</b></h1>
 							<div class="middle-area">

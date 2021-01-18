@@ -9,19 +9,17 @@
 
 	<!-- Font -->
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
 
 
 	<!-- Stylesheets -->
 
-	<link href="<?php echo get_bloginfo( 'template_url' ) ?>/common-css/bootstrap.css" rel="stylesheet">
+	<?php 
+		add_styles(get_bloginfo( 'template_url' )."/common-css/bootstrap.css","iishanto_bootstrap");
+		add_styles(get_bloginfo( 'template_url' )."/common-css/ionicons.css","iishanto_common_icons");
+		add_styles(get_bloginfo( 'template_url' )."/layout-1/css/styles.css","iishanto_index_style");
+	?>
 
-	<link href="<?php echo get_bloginfo( 'template_url' ) ?>/common-css/ionicons.css" rel="stylesheet">
-
-
-	<link href="<?php echo get_bloginfo( 'template_url' ) ?>/layout-1/css/styles.css" rel="stylesheet">
-
-	<link href="<?php echo get_bloginfo( 'template_url' ) ?>/layout-1/css/responsive.css" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 <body >
@@ -31,7 +29,7 @@
 	<header>
 		<div class="container-fluid position-relative no-side-padding">
 
-			<a href="#" class="logo"><img src="<?php echo get_logo_url() ?>" alt="Logo Image"></a>
+			<a href="<?php echo home_url() ?>" class="logo"><img src="<?php echo get_logo_url() ?>" alt="iiShanto"></a>
 
 			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 

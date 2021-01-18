@@ -113,6 +113,9 @@ function post_render($single=false){
     $post_comments = get_comments_number(get_the_ID());
 
     $post_thumb_url=get_the_post_thumbnail_url(get_the_ID(),'full');
+    if($post_thumb_url==""){
+      echo "<style>.post-thumb{display:none;}</style>";
+    }
     $post_thumb_id=get_post_thumbnail_id(get_the_ID());
     $thumb_alt = get_post_meta($post_thumb_id, '_wp_attachment_image_alt', true);
 
@@ -221,3 +224,19 @@ function add_styles($link,$name='iishanto_page_css'){
 }
 
 add_theme_support("html5");
+
+
+
+function iishanto_number_pagination() {
+ 
+global $wp_query;
+$big = 9999999; // need an unlikely integer
+  echo paginate_links( array(
+   'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+   'format' => '?paged=%#%',
+   'current' => max( 1, get_query_var('paged') ),
+   'total' => $wp_query->max_num_pages
+    )
+);
+
+}

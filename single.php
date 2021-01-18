@@ -1,9 +1,8 @@
+<?php get_header(); ?>
 <?php
 add_styles(get_template_directory_uri()."/single-post-1/css/styles.css",'single-post-1');
 add_styles(get_template_directory_uri()."/single-post-1/css/responsive.css",'single-post-responsive');
 ?>
-<?php get_header(); ?>
-
 	<div class="slider" style="display: none;">
 		<div class="display-table  center-text">
 			<h1 class="title display-table-cell"><b>DESIGN</b></h1>
@@ -143,6 +142,7 @@ add_styles(get_template_directory_uri()."/single-post-1/css/responsive.css",'sin
 						</form>
 					</div><!-- comment-form -->
 
+					<a name="comments"></a>
 					<h4><b>COMMENTS(12)</b></h4>
 
 					<?php 
@@ -151,7 +151,7 @@ add_styles(get_template_directory_uri()."/single-post-1/css/responsive.css",'sin
      				}
 					 ?>
 
-					<a class="more-comment-btn" href="#"><b>VIEW MORE COMMENTS</a>
+					<!--<a class="more-comment-btn" href="#"><b>VIEW MORE COMMENTS</a>-->
 
 				</div><!-- col-lg-8 col-md-12 -->
 

@@ -1,5 +1,7 @@
 
-<?php get_header() ?>
+<?php get_header();
+add_styles(get_bloginfo( 'template_url' )."/layout-1/css/responsive.css","iishanto_index_responsive");
+?>
 
 	<?php if(is_category()): ?>
 	<div class="slider">
@@ -21,8 +23,9 @@
 <?php post_render() ?>
 
 					</div><!-- row -->
-
-					<a class="load-more-btn" href="#"><b>LOAD MORE</b></a>
+					<div class="page-navi">
+			<?php iishanto_number_pagination(); ?>
+		</div>
 
 				</div><!-- col-lg-8 col-md-12 -->
 
