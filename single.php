@@ -2,6 +2,7 @@
 <?php
 add_styles(get_template_directory_uri()."/single-post-1/css/styles.css",'single-post-1');
 add_styles(get_template_directory_uri()."/single-post-1/css/responsive.css",'single-post-responsive');
+add_styles(get_template_directory_uri()."/single-post-1/css/jannah.min.css",'single-post-responsive');
 ?>
 	<div class="slider" style="display: none;">
 		<div class="display-table  center-text">
