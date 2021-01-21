@@ -119,7 +119,7 @@ function post_render($single=false){
     $post_thumb_id=get_post_thumbnail_id(get_the_ID());
     $thumb_alt = get_post_meta($post_thumb_id, '_wp_attachment_image_alt', true);
 
-    $post_content=do_shortcode(get_the_content());
+    $post_content=apply_filters('the_content',get_the_content());
 
     $date = get_the_date();
 
