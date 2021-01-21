@@ -119,7 +119,7 @@ function post_render($single=false){
     $post_thumb_id=get_post_thumbnail_id(get_the_ID());
     $thumb_alt = get_post_meta($post_thumb_id, '_wp_attachment_image_alt', true);
 
-    $post_content=get_the_content();
+    $post_content=do_shortcode(get_the_content());
 
     $date = get_the_date();
 
@@ -191,7 +191,7 @@ function right_sidebar() {
             'before_widget' => '<div class="widget-area">',
             'after_widget' => "</div>",
             'before_title' => '<h4 class="title"><b>',
-            'after_title' => '</b></h4>'
+            'after_title' => '</b></h4><hr>'
         )
     );
 }
@@ -206,12 +206,28 @@ function single_post_right_sidebar() {
             'before_widget' => '<div class="widget-area">',
             'after_widget' => "</div>",
             'before_title' => '<h4 class="title"><b>',
-            'after_title' => '</b></h4>'
+            'after_title' => '</b></h4><hr>'
         )
     );
 }
 add_action( 'widgets_init', 'single_post_right_sidebar' );
 
+function footer_sidebar() {
+    register_sidebar(
+        array (
+            'name' => __( 'iiShanto footer sidebar', 'iiShanto footer sidebar' ),
+            'id' => 'iishanto_footer_sidebar',
+            'description' => __( 'Footer Sidebar', 'iiShanto footer sidebar' ),
+            'before_widget' => '<div class="col-lg-4 col-md-6"><div class="footer-section">',
+            'after_widget' => "</div></div>",
+            'before_title' => '<h4 class="title"><b>',
+            'after_title' => '</b></h4>'
+        )
+    );
+}
+
+add_action( 'widgets_init', 'single_post_right_sidebar' );
+add_action( 'widgets_init', 'footer_sidebar' );
 
 function get_dynamic_sidebar($id=  'iishanto_right_sidebar' ){
   if ( is_active_sidebar($id) ){

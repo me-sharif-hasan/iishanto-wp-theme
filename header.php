@@ -20,6 +20,7 @@
 		add_styles(get_bloginfo( 'template_url' )."/layout-1/css/styles.css","iishanto_index_style");
 	?>
 
+	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 	<?php wp_head(); ?>
 </head>
 <body >
