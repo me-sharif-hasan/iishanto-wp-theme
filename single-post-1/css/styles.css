@@ -42,7 +42,7 @@ button:focus, button:active, button:hover{ text-decoration: none; color: #498BF9
 
 b{ font-weight: 500; }
 
-imgg{ width: 100%; }
+img{ max-width: 100%; }
 
 li{ list-style: none; display: inline-block; }
 
@@ -375,4 +375,14 @@ Added by sharif hasan
     margin-right: auto;
     margin-top: 6px;
     margin-bottom: 6px;
+}
+.blog-post-inner img{
+	border-radius: 5px;
+}
+.blog-post-inner .post-thumb img{
+	width: 100%;
+}
+
+.comment-links{
+	color: #086600;
 }

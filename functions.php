@@ -52,9 +52,10 @@ function get_logo_url(){
 
 function get_footer_js(){
   $root = get_bloginfo( 'template_url' );
+  $js="";
   $js .= '<script src="'.$root.'/common-js/jquery-3.1.1.min.js"></script>';
-  $js .= '<script src="'.$root.'/common-js/tether.min.js"></script>';
-  $js .= '<script src="'.$root.'/common-js/bootstrap.js"></script>';
+  //$js .= '<script src="'.$root.'/common-js/tether.min.js"></script>';
+  //$js .= '<script src="'.$root.'/common-js/bootstrap.js"></script>';
   $js .= '<script src="'.$root.'/common-js/scripts.js"></script>';
   echo $js;
 }
@@ -79,12 +80,23 @@ function render_tags($id){
     return $out;
 }
 
-
-function post_render($single=false){
+function check_have_post(&$query){
+  $val=false;
+  if($query==null){
+    $val = have_posts();
+    the_post();
+  }else{
+    $val = $query->have_posts();
+    $query->the_post();
+  }
+  return $val;
+}
+function post_render($single=false,$query=false){
 
   $dual=0;
-  while (have_posts()) {
-    the_post();
+
+  while (check_have_post($query)) {
+    //the_post();
 
     if($single){
       setPostViews(get_the_ID());
@@ -133,7 +145,10 @@ function post_render($single=false){
     $find=array("%post_title%","%post_url%","%post_content%","%post_excerpt%","%post_thumb_url%","%thumb_alt%","%post_category%","%category_slug%","%post_date%","%post_views%","%post_comments%","%post_tags_html%");
 
     $template="";
-    if($single){
+    if($query!=false){
+      $template=file_get_contents(__DIR__."/bona-code-snips/iishanto-suggest.php");
+    }
+    elseif($single){
       $template=file_get_contents(__DIR__."/bona-code-snips/single-post-model-1.php");
     }elseif($post_thumb_url&&$dual==0){
       $template=file_get_contents(__DIR__."/bona-code-snips/blog_post_thumb.php");
@@ -255,4 +270,51 @@ $big = 9999999; // need an unlikely integer
     )
 );
 
+}
+
+
+
+function mo_comment_fields_custom_order( $fields ) {
+    $comment_field = $fields['comment'];
+    $author_field = $fields['author'];
+    $email_field = $fields['email'];
+    //$url_field = $fields['url'];
+    $cookies_field = $fields['cookies'];
+    unset( $fields['comment'] );
+    unset( $fields['author'] );
+    unset( $fields['email'] );
+    //unset( $fields['url'] );
+    unset( $fields['cookies'] );
+    // the order of fields is the order below, change it as needed:
+    $fields['author'] = $author_field;
+    $fields['email'] = $email_field;
+    //$fields['url'] = $url_field;
+    $fields['comment'] = $comment_field;
+    $fields['cookies'] = $cookies_field;
+    // done ordering, now return the fields:
+    return $fields;
+}
+
+add_filter( 'comment_form_fields', 'mo_comment_fields_custom_order' );
+
+add_action( 'comment_form_top', function(){
+     // Adjust this to your needs:
+     echo '<div class="row">'; 
+});
+
+add_action( 'comment_form_bottom', function(){
+     // Adjust this to your needs:
+     echo '</div>'; 
+});
+
+
+
+function smk_get_comment_time( $comment_id = 0 ){
+    return sprintf( 
+        _x( '%s ago', 'Human-readable time', 'text-domain' ), 
+        human_time_diff( 
+            get_comment_date( 'U', $comment_id ), 
+            current_time( 'timestamp' ) 
+        ) 
+    );
 }

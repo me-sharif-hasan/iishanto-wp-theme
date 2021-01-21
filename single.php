@@ -35,116 +35,18 @@ add_styles(get_template_directory_uri()."/single-post-1/css/jannah.min.css",'sin
 		<div class="container">
 			<div class="row">
 
-				<div class="col-lg-4 col-md-6">
-					<div class="card h-100">
-						<div class="single-post post-style-1">
 
-							<div class="blog-image"><img src="images/alex-lambley-205711.jpg" alt="Blog Image"></div>
 
-							<a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
-
-							<div class="blog-info">
-
-								<h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-								Concepts in Physics?</b></a></h4>
-
-								<ul class="post-footer">
-									<li><a href="#"><i class="ion-heart"></i>57</a></li>
-									<li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-									<li><a href="#"><i class="ion-eye"></i>138</a></li>
-								</ul>
-
-							</div><!-- blog-info -->
-						</div><!-- single-post -->
-					</div><!-- card -->
-				</div><!-- col-md-6 col-sm-12 -->
-
-				<div class="col-lg-4 col-md-6">
-					<div class="card h-100">
-						<div class="single-post post-style-1">
-
-							<div class="blog-image"><img src="images/caroline-veronez-165944.jpg" alt="Blog Image"></div>
-
-							<a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
-
-							<div class="blog-info">
-								<h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-									Concepts in Physics?</b></a></h4>
-
-								<ul class="post-footer">
-									<li><a href="#"><i class="ion-heart"></i>57</a></li>
-									<li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-									<li><a href="#"><i class="ion-eye"></i>138</a></li>
-								</ul>
-							</div><!-- blog-info -->
-
-						</div><!-- single-post -->
-
-					</div><!-- card -->
-				</div><!-- col-md-6 col-sm-12 -->
-
-				<div class="col-lg-4 col-md-6">
-					<div class="card h-100">
-						<div class="single-post post-style-1">
-
-							<div class="blog-image"><img src="images/marion-michele-330691.jpg" alt="Blog Image"></div>
-
-							<a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
-
-							<div class="blog-info">
-								<h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-									Concepts in Physics?</b></a></h4>
-
-								<ul class="post-footer">
-									<li><a href="#"><i class="ion-heart"></i>57</a></li>
-									<li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-									<li><a href="#"><i class="ion-eye"></i>138</a></li>
-								</ul>
-							</div><!-- blog-info -->
-
-						</div><!-- single-post -->
-
-					</div><!-- card -->
-				</div><!-- col-md-6 col-sm-12 -->
+<?php 
+$popularpost = new WP_Query( array( 'posts_per_page' => 3, 'meta_key' => 'iishanto_post_views', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+post_render(false,$popularpost);
+ 
+?>
 
 			</div><!-- row -->
 
 		</div><!-- container -->
 	</section>
-
-	<section class="comment-section">
-		<div class="container">
-			<h4><b>POST COMMENT</b></h4>
-			<div class="row">
-
-				<div class="col-lg-12 col-md-12">
-					<div class="comment-form">
-						<form method="post">
-							<div class="row">
-
-								<div class="col-sm-6">
-									<input type="text" aria-required="true" name="contact-form-name" class="form-control"
-										placeholder="Enter your name" aria-invalid="true" required >
-								</div><!-- col-sm-6 -->
-								<div class="col-sm-6">
-									<input type="email" aria-required="true" name="contact-form-email" class="form-control"
-										placeholder="Enter your email" aria-invalid="true" required>
-								</div><!-- col-sm-6 -->
-
-								<div class="col-sm-12">
-									<textarea name="contact-form-message" rows="2" class="text-area-messge form-control"
-										placeholder="Enter your comment" aria-required="true" aria-invalid="false"></textarea >
-								</div><!-- col-sm-12 -->
-								<div class="col-sm-12">
-									<button class="submit-btn" type="submit" id="form-submit"><b>POST COMMENT</b></button>
-								</div><!-- col-sm-12 -->
-
-							</div><!-- row -->
-						</form>
-					</div><!-- comment-form -->
-
-					<a name="comments"></a>
-					<h4><b>COMMENTS(12)</b></h4>
 
 					<?php 
 					 if ( comments_open() || get_comments_number() ){

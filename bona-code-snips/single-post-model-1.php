@@ -31,21 +31,21 @@
 
 							<ul class="icons">
 								<li>SHARE : </li>
-								<li><a href="#"><i class="ion-social-facebook"></i></a></li>
-								<li><a href="#"><i class="ion-social-twitter"></i></a></li>
-								<li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+								<li><a href="https://www.facebook.com/sharer.php?u=%post_url%"><i class="ion-social-facebook"></i></a></li>
+								<li><a href="https://twitter.com/intent/tweet?text=%post_title%&url=%post_url%/"><i class="ion-social-twitter"></i></a></li>
+								<li><a href="https://www.linkedin.com/shareArticle?mini=true&url=%post_url%&title=%post_title%"><i class="ion-social-linkedin"></i></a></li>
 							</ul>
 						</div>
 
-						<div class="post-footer post-info">
+						<div class="post-footer post-info" style="display: none;">
 
 							<div class="left-area">
-								<a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
+								<a class="avatar" href="#"><img src="" alt="Profile Image"></a>
 							</div>
 
 							<div class="middle-area">
-								<a class="name" href="#"><b>Katy Liu</b></a>
-								<h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
+								<a class="name" href="#"><b>Sharif Hasan</b></a>
+								<h6 class="date">%post_date%</h6>
 							</div>
 
 						</div><!-- post-info -->
